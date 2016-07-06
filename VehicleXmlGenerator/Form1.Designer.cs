@@ -40,6 +40,17 @@
             this.vehiclenum = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.checkBox_enabledgv = new System.Windows.Forms.CheckBox();
+            this.Acceleration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Decceleration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Length = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MinGap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaxSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sigma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Dp_min
@@ -140,11 +151,93 @@
             this.saveFileDialog1.CheckFileExists = true;
             this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Acceleration,
+            this.Decceleration,
+            this.ID,
+            this.Length,
+            this.MinGap,
+            this.MaxSpeed,
+            this.Sigma,
+            this.Count});
+            this.dataGridView1.Location = new System.Drawing.Point(29, 134);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(751, 250);
+            this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // checkBox_enabledgv
+            // 
+            this.checkBox_enabledgv.AutoSize = true;
+            this.checkBox_enabledgv.Location = new System.Drawing.Point(32, 89);
+            this.checkBox_enabledgv.Name = "checkBox_enabledgv";
+            this.checkBox_enabledgv.Size = new System.Drawing.Size(104, 17);
+            this.checkBox_enabledgv.TabIndex = 12;
+            this.checkBox_enabledgv.Text = "Enable DataGrid";
+            this.checkBox_enabledgv.UseVisualStyleBackColor = true;
+            this.checkBox_enabledgv.CheckedChanged += new System.EventHandler(this.checkBox_enabledgv_CheckedChanged);
+            // 
+            // Acceleration
+            // 
+            this.Acceleration.HeaderText = "Accel";
+            this.Acceleration.Name = "Acceleration";
+            this.Acceleration.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Decceleration
+            // 
+            this.Decceleration.HeaderText = "Deccel";
+            this.Decceleration.Name = "Decceleration";
+            this.Decceleration.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID.Width = 50;
+            // 
+            // Length
+            // 
+            this.Length.HeaderText = "length";
+            this.Length.Name = "Length";
+            this.Length.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Length.Width = 50;
+            // 
+            // MinGap
+            // 
+            this.MinGap.HeaderText = "MinGap";
+            this.MinGap.Name = "MinGap";
+            this.MinGap.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // MaxSpeed
+            // 
+            this.MaxSpeed.HeaderText = "MaxSpeed";
+            this.MaxSpeed.Name = "MaxSpeed";
+            this.MaxSpeed.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Sigma
+            // 
+            this.Sigma.HeaderText = "Sigma";
+            this.Sigma.Name = "Sigma";
+            this.Sigma.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Sigma.Width = 50;
+            // 
+            // Count
+            // 
+            this.Count.HeaderText = "Count";
+            this.Count.Name = "Count";
+            this.Count.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 416);
+            this.Controls.Add(this.checkBox_enabledgv);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.vehiclenum);
             this.Controls.Add(this.tb_num);
@@ -157,8 +250,9 @@
             this.Controls.Add(this.Dp_max);
             this.Controls.Add(this.Dp_min);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Sumo Vehicle XML Generator";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,6 +272,16 @@
         private System.Windows.Forms.Label vehiclenum;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.CheckBox checkBox_enabledgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Acceleration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Decceleration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Length;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MinGap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaxSpeed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sigma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Count;
     }
 }
 

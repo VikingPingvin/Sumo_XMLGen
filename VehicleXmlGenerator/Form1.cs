@@ -90,5 +90,20 @@ namespace VehicleXmlGenerator
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void checkBox_enabledgv_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_enabledgv.Checked == true)
+            {
+                dataGridView1.Enabled = true;
+            }
+            else
+                dataGridView1.Enabled = false;
+        }
     }
 }
