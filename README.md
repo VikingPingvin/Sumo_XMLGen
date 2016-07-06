@@ -1,1 +1,1 @@
-# Sumo_XMLGen
+# SUMO Vehicle XML Generator
